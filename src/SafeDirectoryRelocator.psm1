@@ -307,6 +307,7 @@ function Invoke-SdrRobocopy {
     if ($exitCode -gt 7) {
         throw "robocopy failed with exit code $exitCode. Source=$Source Target=$Target"
     }
+    $global:LASTEXITCODE = 0
     return $exitCode
 }
 

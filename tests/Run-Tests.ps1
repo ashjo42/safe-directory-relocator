@@ -154,6 +154,7 @@ try {
         Assert-True -Condition (Test-Path -LiteralPath (Join-Path $source 'nested\empty') -PathType Container) -Message 'Empty directories should be restored.'
         Assert-True -Condition ((Get-Content -LiteralPath (Join-Path $source 'alpha.txt') -Raw).Trim() -eq 'alpha') -Message 'Restored source should contain data.'
         Assert-True -Condition (Test-Path -LiteralPath (Join-Path $target 'alpha.txt') -PathType Leaf) -Message 'Restore should retain the target copy.'
+        Assert-True -Condition ($LASTEXITCODE -eq 0) -Message 'Successful robocopy codes must not leak as process failures.'
     }
 
     Write-Host "All $passed tests passed."
