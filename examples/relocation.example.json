@@ -1,0 +1,10 @@
+{
+  "target_root": "D:\\RelocatedDeveloperData",
+  "items": [
+    {
+      "name": "example-cache",
+      "source": "%LOCALAPPDATA%\\ExampleTool\\cache",
+      "target": "ExampleTool\\cache"
+    }
+  ]
+}
